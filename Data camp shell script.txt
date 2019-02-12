@@ -1,0 +1,57 @@
+Unix/Linux 
+shell scrpit commands
+pwd
+ls
+cp - copy file
+mv - move file
+rm - remove
+mv course.txt old-course.txt
+#view a file
+cat filename.txt
+#see file page by page
+less filename.txt 
+#file all together
+more filename.txt
+less seasonal/spring.csv seasonal/summer.csv
+	:n  (move to next file)
+	:q (quit)
+man #stands for manuel, tells info about a command
+# see start of file
+	head seasonal/summer.csv
+	tail seasonal/summer.csv
+
+#use tab button to auto complete
+
+#see first 3 lines 
+head -n 3 seasonal/summer.csv
+# -R (which means "recursive"). If you use ls -R in 
+ls has another flag -F that prints a / after the name of every directory and a *
+
+cut - seperates columns
+cut -f 2 -d , everyone.csv
+
+#cut uses -f (meaning "fields") to specify columns and -d (meaning "delimiter") 
+
+use up arrow keys to see previous commands entered
+history # prints a list of commands already ran
+ ! will rerun command
+	ex. !55
+
+grep
+
+-c: print a count of matching lines rather than the lines themselves
+-h: do not print the names of files when searching multiple files
+-i: ignore case (e.g., treat "Regression" and "regression" as matches)
+-l: print the names of files that contain matches, not the matches
+-n: print line numbers for matching lines
+-v: invert the match, i.e., only show lines that don't match
+#count of matching lines with incisor in two csv
+grep -c incisor seasonal/summer.csv seasonal/winter.csv
+
+To save output use >
+it prints the first 5 lines of the summer data on the screen. If you run this command instead:
+head -n 5 seasonal/summer.csv > top.csv
+
+To get rows in middle, use head and tails first, save to a file, then select head or tail from new file
+head -n 5 seasonal/winter.csv > top.csv
+tail -n 3 top.csv
